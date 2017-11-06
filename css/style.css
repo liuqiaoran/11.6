@@ -1,0 +1,121 @@
+*{
+    padding:0;
+    margin:0;
+    list-style:none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+.wrap{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    height: 45px;
+    display:flex;
+    justify-content: space-between;
+    padding:0 10px;
+    border-bottom:1px solid #ccc;
+}
+header p:nth-of-type(1),header p:nth-of-type(2){
+    line-height: 45px;
+}
+header p:nth-of-type(1){
+    flex:2;
+}
+header p:nth-of-type(2){
+    flex:6;
+    text-align:center;
+}
+header p:nth-of-type(3){
+    flex:2;
+    padding-top:5px;    
+}
+header p{
+    flex:1;
+}
+header p span{
+    display:inline-block;
+}
+header p span i{
+    display:block;
+    text-align:center;
+}
+section{
+    flex:1;
+    overflow-y: scroll;
+}
+.box,.list{
+    width: 100%;
+    display:flex;
+}
+.box dl{
+    margin-top:5px;
+}
+.box dl,.list dl{
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    background:#eee;
+    margin-right:3px;
+}
+.box dl dt,.list dl dt{
+    padding:10px;
+}
+.box dl dd{
+    font-size:18px;
+}
+.box dl dd p{
+    font-size:12px;
+    color:#999;
+    line-height:25px;
+}
+.list{
+    margin-top:10px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.list dl{
+    background:#fff;
+    border-right:1px solid #ccc;
+}
+.list dl:last-child{
+    border:none;
+}
+.list dl dd{
+    font-size:14px;
+    line-height:30px;
+}
+h1>img{
+    width: 100%;
+}
+footer{
+    width: 100%;
+    height: 45px;
+    display:flex;
+    border-top:1px solid #ccc;
+}
+footer a{
+    flex:1;
+    text-align:center;
+    display:block;
+    color:#999;
+    padding-top:5px;
+}
+footer a i{
+    display:block;
+}
+footer a:hover{
+    color:#ed5858;
+}
+.active{
+    color:#ed5858;
+}

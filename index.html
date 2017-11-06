@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="fonts2/iconfont.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <p>北京市<i class="icon iconfont">&#xe650;</i></p>
+            <p><img src="img/logo.png" alt=""></p>
+            <p>
+                <span><i class="icon iconfont">&#xe729;</i>搜索</span>
+                <span><i class="icon iconfont">&#xe716;</i>客服</span>
+            </p>
+        </header>
+        <section>
+            <div class="box" ng-controller="ctrl">
+                <dl ng-repeat="x in list">
+                    <dt><img ng-src="{{x.img}}" alt=""></dt>
+                    <dd>{{x.title}}<p>{{x.samll}}</p></dd>
+                </dl>
+            </div>
+            <div class="list" ng-controller="ctrl1">
+                <dl ng-repeat="a in lists">
+                    <dt><img ng-src="{{a.img}}" alt=""></dt>
+                    <dd>{{a.title}}</dd>
+                </dl>
+            </div>
+            <div class="list" ng-controller="ctrl1">
+                <dl>
+                    <dt><img src="img/img1.png" alt=""></dt>
+                    <dd>轮胎</dd>
+                </dl>
+                <p><img src="img/logo1.png" alt=""></p>
+                <dl>
+                    <dt><img src="img/img1.png" alt=""></dt>
+                    <dd>轮胎</dd>
+                </dl>
+            </div>
+            <div class="list" ng-controller="ctrl1">
+                <dl ng-repeat="a in lists">
+                    <dt><img ng-src="{{a.img}}" alt=""></dt>
+                    <dd>{{a.title}}</dd>
+                </dl>
+            </div>
+            <h1><img src="img/banner.png" alt=""></h1>
+        </section>
+        <footer>
+            <a href="#" class="active"><i class="icon iconfont">&#xe729;</i>首页</a>
+            <a href="#"><i class="icon iconfont">&#xe729;</i>轮胎</a>
+            <a href="#"><i class="icon iconfont">&#xe729;</i>门店</a>
+            <a href="#"><i class="icon iconfont">&#xe729;</i>我的</a>
+        </footer>
+    </div>
+    <script src="libs/angular.js"></script>
+    <script>
+        var app = angular.module('app',[]);
+        app.controller('ctrl',function($scope,$http){
+            $http({
+                url:'http://localhost:9999/mocks',
+                method:'get'
+            }).then(function(data){
+                console.log(data);
+                var res = data.data;
+                $scope.list = res;
+            })
+        })
+        app.controller('ctrl1',function($scope,$http){
+            $http({
+                url:'http://localhost:9999/mocks',
+                method:'get'
+            }).then(function(data){
+                console.log(data);
+                var res = data.data;
+                $scope.lists = res;
+            })
+        })
+    </script>
+</body>
+</html>
